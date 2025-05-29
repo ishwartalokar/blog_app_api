@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View Posts</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container py-5">
+  <h2 class="mb-4 text-center">📖 All Posts</h2>
+  <ul id="posts" class="list-group"></ul>
+
+  <script>
+    async function loadPosts() {
+      const res = await fetch("http://127.0.0.1:8000/posts");
+      const data = await res.json();
+
+      const list = document.getElementById("posts");
+      data.forEach(post => {
+        const li = document.createElement("li");
+        li.className = "list-group-item";
+        li.innerHTML = `<strong>${post.title}</strong><br><small>${post.content}</small>`;
+        list.appendChild(li);
+      });
+    }
+
+    loadPosts();
+  </script>
+</body>
+</html>
