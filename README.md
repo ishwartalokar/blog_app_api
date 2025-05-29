@@ -1,4 +1,4 @@
-# FastAPI Post Manager
+# Learning API's through Blog App
 
 This is a simple CRUD web application built with **FastAPI**, **PostgreSQL**, and **Bootstrap 5** for managing blog posts.  
 The project allows you to **Create**, **Read**, **Update**, and **Delete** posts via a clean and responsive web interface.
